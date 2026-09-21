@@ -1,0 +1,19 @@
+[project]
+name = "practice-tajwid"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Sith", email = "227094824+python3demon@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pygame>=2.6.1",
+]
+
+[project.scripts]
+practice-tajwid = "practice_tajwid:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"

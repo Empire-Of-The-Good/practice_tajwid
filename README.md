@@ -1,7 +1,7 @@
 <div align="center">
 <img src="logo.png" alt="Practice Tajwid Banner" width="400">
 
-[![Version 0.0.0](https://img.shields.io/badge/Version-0.0.0-red.svg)](https://github.com/Empire-Of-The-Good/practice_tajwid)
+[![Version 0.0.1](https://img.shields.io/badge/Version-0.0.1-red.svg)](https://github.com/Empire-Of-The-Good/practice_tajwid)
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-green.svg?logo=python)](https://www.python.org/downloads/)
 [![Pygame 2.6.1](https://img.shields.io/badge/Pygame-2.6.1-orange.svg?logo=pypi)](https://pypi.org/project/pygame/)
 [![OS](https://img.shields.io/badge/OS-Linux-purple.svg?logo=linux&logoColor=white)](https://kernel.org/)

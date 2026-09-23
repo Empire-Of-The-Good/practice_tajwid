@@ -1,0 +1,22 @@
+{
+    "font": "font/Note.ttf",
+    "size": 50,
+    "window": {
+        "size": [800, 600],
+        "title": "Quiz - Practice Tajwid",
+        "fps": 60
+    },
+    "colors": {
+        "background": null,
+        "text_main": [
+            255,
+            255,
+            255
+        ],
+        "text_correct": [
+            255,
+            0,
+            0
+        ]
+    }
+}

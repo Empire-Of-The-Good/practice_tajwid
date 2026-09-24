@@ -8,9 +8,7 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "arabic-reshaper>=3.0.1",
-    "pygame>=2.6.1",
-    "python-bidi>=0.6.11",
+    "pyqt6>=6.11.0",
 ]
 
 [project.scripts]

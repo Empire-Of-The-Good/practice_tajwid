@@ -2,7 +2,6 @@ import json
 
 
 def get_config(path: str) -> dict:
-    print(path)
     with open(path, "r", encoding="utf-8") as file:
         data = json.load(file)
 

@@ -8,5 +8,45 @@
         "translation": "К̣ур’а̄нун",
         "ar_errors": ["قُ"],
         "ru_errors": ["К̣"]
+    },
+    "خَالِدِينَ": {
+        "translation": "Х̮о̄лидӣна",
+        "ar_errors": ["خَا"],
+        "ru_errors": ["Х̮о̄"]
+    },
+    "رَبُّكَ": {
+        "translation": "Роббука",
+        "ar_errors": ["رَ"],
+        "ru_errors": ["Ро"]
+    },
+    "قُلْ هُوَ اللَّهُ": {
+        "translation": "К̣уль хува-Лл̣о̄ху",
+        "ar_errors": ["اللَّهُ"],
+        "ru_errors": ["Лл̣о̄"]
+    },
+    "بِسْمِ اللَّهِ": {
+        "translation": "Бисми-Лля̄хи",
+        "ar_errors": ["اللَّهِ"],
+        "ru_errors": ["Лля̄"]
+    },
+    "أَبْتَرُ": {
+        "translation": "Аб-тару",
+        "ar_errors": ["بْ"],
+        "ru_errors": ["б-"]
+    },
+    "الْفَلَقِ": {
+        "translation": "Аль-Фалак̣(ъ)",
+        "ar_errors": ["قِ"],
+        "ru_errors": ["к̣(ъ)"]
+    },
+    "مِنْ خَوْفٍ": {
+        "translation": "Мин х̮оуф",
+        "ar_errors": ["نْ"],
+        "ru_errors": ["н"]
+    },
+    "مِنْ قَبْلُ": {
+        "translation": "Миң-к̣аблю",
+        "ar_errors": ["نْ"],
+        "ru_errors": ["ң"]
     }
 }

@@ -1,6 +1,7 @@
 {
     "font": "font/Note.ttf",
     "size": 50,
+    "bd_name": "words_bd.json",
     "window": {
         "size": [800, 600],
         "title": "Quiz - Practice Tajwid",

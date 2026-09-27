@@ -23,6 +23,11 @@ config_data = config.get_config(FILE_CONFIG)
 WIDTH, HEIGHT = config_data["window"]["size"]
 TITLE = config_data["window"]["title"]
 FILE_WORDS_PATH = str(BASE_DIR / config_data["bd_name"])
+BACKGROUND_COLOR = tuple(config_data["colors"]["background"])
+TEXT_COLOR = tuple(config_data["colors"]["text_main"])
+ERROR_COLOR = tuple(config_data["colors"]["text_correct"])
+FONT_SIZE_AR = config_data["size_ar"]
+FONT_SIZE_RU = config_data["size_ru"]
 
 """======================FONT======================"""
 words = word.get_words(FILE_WORDS_PATH)
@@ -37,8 +42,8 @@ class QuizTest(QMainWindow):
         self.init_keyboard()
 
     def init_ui(self):
-        self.arabic_font = QFont(FONT_PATH, 50)
-        self.rus_font = QFont("Arial", 20)
+        self.arabic_font = QFont(FONT_PATH, FONT_SIZE_AR)
+        self.rus_font = QFont("Arial", FONT_SIZE_RU)
 
         self.central_ui = QWidget()
         self.main_layout = QVBoxLayout()
@@ -58,9 +63,9 @@ class QuizTest(QMainWindow):
         self.main_layout.addWidget(self.text_rus)
         self.main_layout.addStretch(1)
 
-        self.text.setStyleSheet("color: red;")
-        self.text_rus.setStyleSheet("color: red;")
-        self.central_ui.setStyleSheet("background-color: black;")
+        self.text.setStyleSheet(f"color: rgb{TEXT_COLOR};")
+        self.text_rus.setStyleSheet(f"color: rgb{TEXT_COLOR};")
+        self.central_ui.setStyleSheet(f"background-color: rgb{BACKGROUND_COLOR};")
 
         self.setCentralWidget(self.central_ui)
         self.central_ui.setLayout(self.main_layout)
@@ -75,7 +80,18 @@ class QuizTest(QMainWindow):
             self.text.setText(self.current_word.word_ar)
             self.text_rus.setText("")
         else:
-            self.text_rus.setText(self.current_word.translation)
+            text_rus_format = self.get_highlighted_text(
+                self.current_word.translation, self.current_word.ru_errors
+            )
+            self.text_rus.setText(text_rus_format)
+
+    def get_highlighted_text(self, text: str, errors: list):
+        for error in errors:
+            text = text.replace(
+                error,
+                f"<span style='color: rgb{ERROR_COLOR};'>{error}</span>",
+            )
+        return text
 
 
 if __name__ == "__main__":

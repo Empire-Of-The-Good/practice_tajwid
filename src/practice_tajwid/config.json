@@ -1,6 +1,7 @@
 {
     "font": "font/Note.ttf",
-    "size": 50,
+    "size_ar": 50,
+    "size_ru": 20,
     "bd_name": "words_bd.json",
     "window": {
         "size": [800, 600],
@@ -8,14 +9,18 @@
         "fps": 60
     },
     "colors": {
-        "background": null,
+        "background": [
+            0,
+            0,
+            0
+        ],
         "text_main": [
-            255,
-            255,
-            255
+            242,
+            242,
+            242
         ],
         "text_correct": [
-            255,
+            200,
             0,
             0
         ]

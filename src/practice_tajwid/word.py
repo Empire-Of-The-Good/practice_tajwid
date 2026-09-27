@@ -17,7 +17,7 @@ class Word:
         return f"{self.word_ar} — {self.translation}"
 
 
-def get_words(path: str) -> list:
+def get_words(path: str) -> list[Word]:
     with open(path, "r", encoding="utf-8") as file:
         data = json.load(file)
 

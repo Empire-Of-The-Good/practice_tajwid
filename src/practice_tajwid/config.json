@@ -8,14 +8,18 @@
         "fps": 60
     },
     "colors": {
-        "background": null,
+        "background": [
+            0,
+            0,
+            0
+        ],
         "text_main": [
-            255,
-            255,
-            255
+            242,
+            242,
+            242
         ],
         "text_correct": [
-            255,
+            200,
             0,
             0
         ]

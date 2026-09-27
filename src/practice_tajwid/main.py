@@ -23,6 +23,9 @@ config_data = config.get_config(FILE_CONFIG)
 WIDTH, HEIGHT = config_data["window"]["size"]
 TITLE = config_data["window"]["title"]
 FILE_WORDS_PATH = str(BASE_DIR / config_data["bd_name"])
+BACKGROUND_COLOR = tuple(config_data["colors"]["background"])
+TEXT_COLOR = tuple(config_data["colors"]["text_main"])
+ERROR_COLOR = tuple(config_data["colors"]["text_correct"])
 
 """======================FONT======================"""
 words = word.get_words(FILE_WORDS_PATH)
@@ -58,9 +61,9 @@ class QuizTest(QMainWindow):
         self.main_layout.addWidget(self.text_rus)
         self.main_layout.addStretch(1)
 
-        self.text.setStyleSheet("color: red;")
-        self.text_rus.setStyleSheet("color: red;")
-        self.central_ui.setStyleSheet("background-color: black;")
+        self.text.setStyleSheet(f"color: rgb{TEXT_COLOR};")
+        self.text_rus.setStyleSheet(f"color: rgb{TEXT_COLOR};")
+        self.central_ui.setStyleSheet(f"background-color: rgb{BACKGROUND_COLOR};")
 
         self.setCentralWidget(self.central_ui)
         self.central_ui.setLayout(self.main_layout)

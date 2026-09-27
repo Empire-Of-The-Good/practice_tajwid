@@ -1,6 +1,7 @@
 {
     "font": "font/Note.ttf",
-    "size": 50,
+    "size_ar": 50,
+    "size_ru": 20,
     "bd_name": "words_bd.json",
     "window": {
         "size": [800, 600],

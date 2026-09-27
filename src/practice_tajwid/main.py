@@ -26,6 +26,8 @@ FILE_WORDS_PATH = str(BASE_DIR / config_data["bd_name"])
 BACKGROUND_COLOR = tuple(config_data["colors"]["background"])
 TEXT_COLOR = tuple(config_data["colors"]["text_main"])
 ERROR_COLOR = tuple(config_data["colors"]["text_correct"])
+FONT_SIZE_AR = config_data["size_ar"]
+FONT_SIZE_RU = config_data["size_ru"]
 
 """======================FONT======================"""
 words = word.get_words(FILE_WORDS_PATH)
@@ -40,8 +42,8 @@ class QuizTest(QMainWindow):
         self.init_keyboard()
 
     def init_ui(self):
-        self.arabic_font = QFont(FONT_PATH, 50)
-        self.rus_font = QFont("Arial", 20)
+        self.arabic_font = QFont(FONT_PATH, FONT_SIZE_AR)
+        self.rus_font = QFont("Arial", FONT_SIZE_RU)
 
         self.central_ui = QWidget()
         self.main_layout = QVBoxLayout()

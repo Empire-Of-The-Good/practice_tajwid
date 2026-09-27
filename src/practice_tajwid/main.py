@@ -78,7 +78,18 @@ class QuizTest(QMainWindow):
             self.text.setText(self.current_word.word_ar)
             self.text_rus.setText("")
         else:
-            self.text_rus.setText(self.current_word.translation)
+            text_rus_format = self.get_highlighted_text(
+                self.current_word.translation, self.current_word.ru_errors
+            )
+            self.text_rus.setText(text_rus_format)
+
+    def get_highlighted_text(self, text: str, errors: list):
+        for error in errors:
+            text = text.replace(
+                error,
+                f"<span style='color: rgb{ERROR_COLOR};'>{error}</span>",
+            )
+        return text
 
 
 if __name__ == "__main__":

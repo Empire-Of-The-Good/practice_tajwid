@@ -22,12 +22,12 @@ config_data = config.get_config(FILE_CONFIG)
 
 WIDTH, HEIGHT = config_data["window"]["size"]
 TITLE = config_data["window"]["title"]
-FILE_WORDS_PATH = str(BASE_DIR / config_data["bd_name"])
-BACKGROUND_COLOR = tuple(config_data["colors"]["background"])
-TEXT_COLOR = tuple(config_data["colors"]["text_main"])
-ERROR_COLOR = tuple(config_data["colors"]["text_correct"])
-FONT_SIZE_AR = config_data["size_ar"]
-FONT_SIZE_RU = config_data["size_ru"]
+FILE_WORDS_PATH = str(BASE_DIR / config_data["db"]["name"])
+BACKGROUND_COLOR = tuple(config_data["window"]["background_color"])
+TEXT_COLOR = tuple(config_data["text"]["colors"]["default"])
+CORRECT_COLOR = tuple(config_data["text"]["colors"]["correct"])
+FONT_SIZE_AR = config_data["text"]["sizes"]["ar"]
+FONT_SIZE_RU = config_data["text"]["sizes"]["ru"]
 
 """======================FONT======================"""
 words = word.get_words(FILE_WORDS_PATH)
@@ -89,7 +89,7 @@ class QuizTest(QMainWindow):
         for error in errors:
             text = text.replace(
                 error,
-                f"<span style='color: rgb{ERROR_COLOR};'>{error}</span>",
+                f"<span style='color: rgb{CORRECT_COLOR};'>{error}</span>",
             )
         return text
 

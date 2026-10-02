@@ -29,7 +29,6 @@ CORRECT_COLOR = tuple(config_data["text"]["colors"]["correct"])
 FONT_SIZE_AR = config_data["text"]["sizes"]["ar"]
 FONT_SIZE_RU = config_data["text"]["sizes"]["ru"]
 
-"""======================FONT======================"""
 words = word.get_words(FILE_WORDS_PATH)
 
 

@@ -1,28 +1,37 @@
 {
-    "font": "font/Note.ttf",
-    "size_ar": 50,
-    "size_ru": 20,
-    "bd_name": "words_bd.json",
-    "window": {
-        "size": [800, 600],
-        "title": "Quiz - Practice Tajwid",
-        "fps": 60
+    "db": {
+        "name": "words_bd.json"
     },
-    "colors": {
-        "background": [
-            0,
-            0,
-            0
+    "window": {
+        "size": [
+            800,
+            600
         ],
-        "text_main": [
-            242,
-            242,
-            242
-        ],
-        "text_correct": [
-            200,
+        "title": "Quiz - Practice Tajwid",
+        "fps": 60,
+        "background_color": [
+            0,
             0,
             0
         ]
+    },
+    "text": {
+        "font_path": "font/Note.ttf",
+        "sizes": {
+            "ar": 50,
+            "ru": 20
+        },
+        "colors": {
+            "default": [
+                242,
+                242,
+                242
+            ],
+            "correct": [
+                200,
+                0,
+                0
+            ]
+        }
     }
 }

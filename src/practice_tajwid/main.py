@@ -17,33 +17,22 @@ from practice_tajwid import config, word
 """======================CONFIG======================"""
 BASE_DIR = Path(__file__).resolve().parent
 FILE_CONFIG = str(BASE_DIR / "config.json")
-FONT_PATH = str(BASE_DIR / "font/Noto.ttf")
-config_data = config.get_config(FILE_CONFIG)
+config_data = config.Config(FILE_CONFIG)
 
-WIDTH, HEIGHT = config_data["window"]["size"]
-TITLE = config_data["window"]["title"]
-FILE_WORDS_PATH = str(BASE_DIR / config_data["bd_name"])
-BACKGROUND_COLOR = tuple(config_data["colors"]["background"])
-TEXT_COLOR = tuple(config_data["colors"]["text_main"])
-ERROR_COLOR = tuple(config_data["colors"]["text_correct"])
-FONT_SIZE_AR = config_data["size_ar"]
-FONT_SIZE_RU = config_data["size_ru"]
-
-"""======================FONT======================"""
-words = word.get_words(FILE_WORDS_PATH)
+words = word.get_words(str(BASE_DIR / config_data.db.name))
 
 
 class QuizTest(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle(TITLE)
-        self.setMinimumSize(WIDTH, HEIGHT)
+        self.setWindowTitle(config_data.window.title)
+        self.setMinimumSize(*config_data.window.size)
         self.init_ui()
         self.init_keyboard()
 
     def init_ui(self):
-        self.arabic_font = QFont(FONT_PATH, FONT_SIZE_AR)
-        self.rus_font = QFont("Arial", FONT_SIZE_RU)
+        self.arabic_font = QFont(config_data.text.font_path, config_data.text.sizes.ar)
+        self.rus_font = QFont("Arial", config_data.text.sizes.ru)
 
         self.central_ui = QWidget()
         self.main_layout = QVBoxLayout()
@@ -63,9 +52,9 @@ class QuizTest(QMainWindow):
         self.main_layout.addWidget(self.text_rus)
         self.main_layout.addStretch(1)
 
-        self.text.setStyleSheet(f"color: rgb{TEXT_COLOR};")
-        self.text_rus.setStyleSheet(f"color: rgb{TEXT_COLOR};")
-        self.central_ui.setStyleSheet(f"background-color: rgb{BACKGROUND_COLOR};")
+        self.text.setStyleSheet(f"color: {config_data.text.colors.default_qss};")
+        self.text_rus.setStyleSheet(f"color: {config_data.text.colors.default_qss};")
+        self.central_ui.setStyleSheet(f"background-color: {config_data.window.bg_qss};")
 
         self.setCentralWidget(self.central_ui)
         self.central_ui.setLayout(self.main_layout)
@@ -89,7 +78,7 @@ class QuizTest(QMainWindow):
         for error in errors:
             text = text.replace(
                 error,
-                f"<span style='color: rgb{ERROR_COLOR};'>{error}</span>",
+                f"<span style='color: {config_data.text.colors.correct_qss};'>{error}</span>",
             )
         return text
 

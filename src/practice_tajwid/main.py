@@ -17,9 +17,9 @@ from practice_tajwid import config, word
 """======================CONFIG======================"""
 BASE_DIR = Path(__file__).resolve().parent
 FILE_CONFIG = str(BASE_DIR / "config.json")
-FONT_PATH = str(BASE_DIR / "font/Noto.ttf")
 config_data = config.get_config(FILE_CONFIG)
 
+FONT_PATH = str(BASE_DIR / config_data["text"]["font_path"])
 WIDTH, HEIGHT = config_data["window"]["size"]
 TITLE = config_data["window"]["title"]
 FILE_WORDS_PATH = str(BASE_DIR / config_data["db"]["name"])

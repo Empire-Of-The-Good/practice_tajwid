@@ -3,10 +3,17 @@
         "name": "words_bd.json"
     },
     "window": {
-        "size": [800, 600],
+        "size": [
+            800,
+            600
+        ],
         "title": "Quiz - Practice Tajwid",
         "fps": 60,
-        "background_color": [0, 0, 0]
+        "background_color": [
+            0,
+            0,
+            0
+        ]
     },
     "text": {
         "font_path": "font/Note.ttf",
@@ -15,8 +22,16 @@
             "ru": 20
         },
         "colors": {
-            "default": [242, 242, 242],
-            "correct": [200, 0, 0]
+            "default": [
+                242,
+                242,
+                242
+            ],
+            "correct": [
+                200,
+                0,
+                0
+            ]
         }
     }
 }

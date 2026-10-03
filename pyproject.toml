@@ -4,6 +4,7 @@ version = "0.3.1"
 description = "Тренажер для практики правил таджвида"
 readme = "README.md"
 authors = [
+    { name = "Jedi", email = "142652317+Empire-Of-The-Good@users.noreply.github.com" },
     { name = "Sith", email = "227094824+python3demon@users.noreply.github.com" }
 ]
 requires-python = ">=3.12"
